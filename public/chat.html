@@ -7,6 +7,14 @@
 		<title>Chat-App</title>
 		<link rel="icon" href="/img/favicon.png" />
 		<link rel="stylesheet" href="/css/styles.min.css" />
+
+		<style>
+			.map {
+				max-width: 600px;
+				height: 200px;
+				display: block;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="chat">
@@ -40,7 +48,7 @@
 			            <span class="message__name">{{ username }}</span>
 			            <span class="message__meta">{{ createdAt }}</span>
 			        </p>
-			        <p><a href="{{ url }}" target="_blank">My Current Location</a></p>
+			        <p><a href="{{ url }}" target="_blank"><div class="map" style="background:url({{ imgUrl }}) no-repeat; background-size: cover; background-position: center"></div></a></p>
 			    </div>
 		</script>
 
