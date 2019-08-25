@@ -50,9 +50,9 @@ io.on("connection", socket => {
 		callback();
 	});
 
-	socket.on("sendLocation", ({ latitude, longitude }, callback) => {
+	socket.on("sendLocation", (coords, callback) => {
 		const user = getUser(socket.id);
-		io.to(user.room).emit("locationMessage", generateLocationMessage(user.username, latitude, longitude));
+		io.to(user.room).emit("locationMessage", generateLocationMessage(user.username, coords.latitude, coords.longitude));
 		callback();
 	});
 
